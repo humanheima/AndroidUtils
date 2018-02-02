@@ -8,17 +8,14 @@ version = "1.0.0"
 
 android {
 
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        versionName version
     }
 
     lintOptions {
@@ -34,12 +31,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
 }
 
 // 项目的主页
@@ -47,7 +40,7 @@ def siteUrl = 'https://github.com/humanheima/AndroidUtils'
 // Git仓库的url
 def gitUrl = 'https://github.com/humanheima/AndroidUtils.git'
 // Maven Group ID for the artifact，一般填你唯一的包名
-group = "com.brotherd.androidutilslibrary"
+group = "com.hm.kof97"
 
 install {
     repositories.mavenInstaller {
@@ -112,7 +105,7 @@ bintray {
         //发布到Bintray的仓库
         repo = "KOF97"
         //KOF97仓库里的package
-        name = "AndroidUtilsLibrary"
+        name = "androidutils"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]

@@ -1,4 +1,4 @@
-package com.brotherd.androidutilslibrary;
+package com.hm.androidutilslibrary;
 
 import android.util.Log;
 
