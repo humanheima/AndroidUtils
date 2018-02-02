@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.hm.androidutilslibrary.VersionUtil;
+import com.hm.androidutils.VersionUtil;
 
 public class MainActivity extends AppCompatActivity {
 
